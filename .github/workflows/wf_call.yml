@@ -9,7 +9,6 @@ on:
 jobs:
   job_3:
     name: Display results
-    needs: job_2
     runs-on: ubuntu-latest
     steps:
       - name: Download math result for job 2
