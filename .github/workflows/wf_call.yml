@@ -6,20 +6,20 @@ on:
       api_version:
         required: true
         type: string
-
-job_3:
-  name: Display results
-  needs: job_2
-  runs-on: ubuntu-latest
-  steps:
-    - name: Download math result for job 2
-      uses: actions/download-artifact@v3
-      with:
-        name: homework
-    - name: Print the final result
-      shell: bash
-      run: |
-        ls -latr
-        value=`cat math-homework.txt`
-        echo The result is $value
-        echo The carried over input is ${{ inputs.api_version }}
+jobs:
+  job_3:
+    name: Display results
+    needs: job_2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download math result for job 2
+        uses: actions/download-artifact@v3
+        with:
+          name: homework
+      - name: Print the final result
+        shell: bash
+        run: |
+          ls -latr
+          value=`cat math-homework.txt`
+          echo The result is $value
+          echo The carried over input is ${{ inputs.api_version }}
