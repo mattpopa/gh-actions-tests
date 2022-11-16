@@ -122,4 +122,3 @@ jobs:
     with:
       api_version: 123
     secrets: inherit
-    env: inherit
